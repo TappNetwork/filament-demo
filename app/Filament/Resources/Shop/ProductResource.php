@@ -146,7 +146,9 @@ class ProductResource extends Resource
                                     ->searchable()
                                     ->hiddenOn(ProductsRelationManager::class),
 
-                                Forms\Components\MultiSelect::make('categories')
+                                Forms\Components\Select::make('categories')
+                                    ->multiple()
+                                    ->preload()
                                     ->relationship('categories', 'name')
                                     ->required(),
                             ]),
